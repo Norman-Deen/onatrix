@@ -1,0 +1,46 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+
+    var partnersImage1 = settings?.Value<IPublishedContent>("partnersImage1")?.Url() ?? "";
+    var partnersImage2 = settings?.Value<IPublishedContent>("partnersImage2")?.Url() ?? "";
+    var partnersImage3 = settings?.Value<IPublishedContent>("partnersImage3")?.Url() ?? "";
+    var partnersImage4 = settings?.Value<IPublishedContent>("partnersImage4")?.Url() ?? "";
+    var partnersImage5 = settings?.Value<IPublishedContent>("partnersImage5")?.Url() ?? "";
+    var partnersImage6 = settings?.Value<IPublishedContent>("partnersImage6")?.Url() ?? "";
+
+
+}
+
+<section id="partners" class="partners bg-gray">
+    <div class="container">
+        <div class="partner">
+            <img src="@partnersImage1" alt="Image of partners logo">
+        </div>
+
+        <div class="partner">
+            <img src="@partnersImage2" alt="Image of partners logo">
+        </div>
+
+        <div class="partner">
+            <img src="@partnersImage3" alt="Image of partners logo">
+        </div>
+
+        <div class="partner">
+            <img src="@partnersImage4" alt="Image of partners logo">
+        </div>
+
+        <div class="partner">
+            <img src="@partnersImage5" alt="Image of partners logo">
+        </div>
+
+        <div class="partner">
+           <img src="@partnersImage6" alt="Image of partners logo">
+        </div>
+    </div>
+
+</section>

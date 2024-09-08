@@ -1,0 +1,61 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+
+    var officeLocation = settings?.Value<string>("officeLocation") ?? "";
+    var headerXLink = settings?.Value<string>("headerXLink") ?? "";
+    var headerFacebookLink = settings?.Value<string>("headerFacebookLink") ?? "";
+    var headerInstagramLink = settings?.Value<string>("headerInstagramLink") ?? "";
+    var headerLink1 = settings?.Value<string>("headerLink1") ?? "";
+    var headerLinkText1 = settings?.Value<string>("headerLinkText1") ?? "";
+    var headerLink2 = settings?.Value<string>("headerLink2") ?? "";
+    var headerLinkText2 = settings?.Value<string>("headerLinkText2") ?? "";
+    var headerLink3 = settings?.Value<string>("headerLink3") ?? "";
+    var headerLinkText3 = settings?.Value<string>("headerLinkText3") ?? "";
+    var headerLink4 = settings?.Value<string>("headerLink4") ?? "";
+    var headerLinkText4 = settings?.Value<string>("headerLinkText4") ?? "";
+
+    var siteLogo = settings?.Value<IPublishedContent>("siteLogo")?.Url() ?? "";
+
+}
+
+<header id="header">
+    <div class="background-primary">
+        <div class="container">
+            <div class="text">
+                <p>@officeLocation</p>
+            </div>
+            <div class="social-links">
+                <a href="@headerXLink">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="@headerFacebookLink">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="@headerInstagramLink">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="background-light">
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="@siteLogo" alt="Logo Image"></a>
+            </div>
+            <div class="links">
+                <a href="@headerLink1">@headerLinkText1</a>
+                <a href="@headerLink2">@headerLinkText2</a>
+                <a href="@headerLink3">@headerLinkText3</a>
+                <a href="@headerLink4">@headerLinkText4</a>
+            </div>
+            <div class="search-icon">
+                <a href="#"><i class="fas fa-search"></i></a>
+            </div>
+        </div>
+    </div>
+</header>

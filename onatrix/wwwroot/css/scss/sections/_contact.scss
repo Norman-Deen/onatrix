@@ -1,0 +1,34 @@
+﻿#map {
+    position: relative;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .request-box {
+            position: absolute;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            top: -500px;
+            min-height: 560px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+            .request-text {
+                text-align: center;
+                margin-top: 3rem;
+
+                @include desktop {
+                    width: 50%;
+                }
+            }
+            // .request-form{
+            // }
+        }
+    }
+
+    .bg-gray {
+        height: 6rem;
+    }
+}

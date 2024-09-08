@@ -1,0 +1,59 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+	Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+    var contactBackgroundImage = Model?.Value<IPublishedContent>("contactBackgroundImage")?.Url() ?? "";
+}
+
+<section id="contact" class="banner">
+    <div class="background"> 
+        <img src="@contactBackgroundImage" alt="Backround image">
+        <div class="content">
+            <h2>@Model?.Value("contactHeadline")</h2>
+            <div class="links">
+                <a class="home" href="@Model?.Value("contactLink1")">@Model?.Value("contactLinkText1")</a>
+                    <div class="chevron"><i class="fa-regular fa-chevron-right"></i></div>
+                <a class="activ" href="@Model?.Value("contactLink2")">@Model?.Value("contactLinkText2")</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("partials/static/next-project.cshtml")
+
+<section id="map">
+    <div className="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2035.1615241898567!2d18.05131977757098!3d59.33025707461478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ssv!2sse!4v1725544158174!5m2!1ssv!2sse"
+            width="100%"
+            height="750"
+            style="border:0;"
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Google Maps"
+        ></iframe>
+    </div>
+    <div class="container">
+        <div class="request-box bg-light">
+            <div class="request-text">
+                <h5>@Model.Value("requestTextHeadline")</h5>
+                <h2>@Model.Value("requestTextHeading")</h2>    
+                <p>@Model.Value("requestTextText")</p>
+            </div>
+            
+            <div class="request-form">
+
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray"></div>
+</section>
+
+
+@await Html.PartialAsync("partials/static/partners.cshtml")
+
+
