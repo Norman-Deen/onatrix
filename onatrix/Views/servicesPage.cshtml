@@ -2,7 +2,81 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "mainLayout.cshtml";
+     ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var serviceSolution1Image = Model?.Value<IPublishedContent>("serviceSolution1Image")?.Url() ?? "";
+    var serviceSolution2Image = Model?.Value<IPublishedContent>("serviceSolution2Image")?.Url() ?? "";
+    var serviceSolution3Image = Model?.Value<IPublishedContent>("serviceSolution3Image")?.Url() ?? "";
+    var serviceSolution4Image = Model?.Value<IPublishedContent>("serviceSolution4Image")?.Url() ?? "";
+    var serviceSolution5Image = Model?.Value<IPublishedContent>("serviceSolution5Image")?.Url() ?? "";
+    var serviceSolution6Image = Model?.Value<IPublishedContent>("serviceSolution6Image")?.Url() ?? "";
 }
 
 
-<h1>Services Page</h1>
+
+<section id="our-services" class="our-services">
+    <div class="bg-gray">
+        <div class="container">
+            <h6>@Model?.Value("servicesHeadline")</h6>
+            <h2>@Model?.Value("servicesTitleFirstRow")</h2>
+            <h2>@Model?.Value("servicesTitleSecondRow")</h2>
+            
+            <div class="solution">
+                <a href="@Model?.Value("serviceSolution1Link")">
+                    <div class="solution-item">
+                        <h5>@Model?.Value("serviceSolution1Headline")</h5>
+                        <div class="image">
+                            <img src="@serviceSolution1Image" alt="Image of @Model?.Value("serviceSolution1Headline")">
+                        </div>
+                        <p>@Model?.Value("serviceSolution1Text")</p>
+                    </div>
+                </a>
+                <a href="@Model?.Value("serviceSolution2Link")">
+                    <div class="solution-item">
+                        <h5>@Model?.Value("serviceSolution2Headline")</h5>
+                        <div class="image">
+                            <img src="@serviceSolution2Image" alt="Image of @Model?.Value("serviceSolution2Headline")">
+                        </div>
+                        <p>@Model?.Value("serviceSolution2Text")</p>
+                    </div>
+                </a>
+                <a href="@Model?.Value("serviceSolution3Link")">
+                    <div class="solution-item">
+                        <h5>@Model?.Value("serviceSolution3Headline")</h5>
+                        <div class="image">
+                            <img src="@serviceSolution3Image" alt="Image of @Model?.Value("serviceSolution3Headline")">
+                        </div>
+                        <p>@Model?.Value("serviceSolution3Text")</p>
+                    </div>
+                </a>
+                <a href="@Model?.Value("serviceSolution4Link")">
+                    <div class="solution-item">
+                        <h5>@Model?.Value("serviceSolution4Headline")</h5>
+                        <div class="image">
+                            <img src="@serviceSolution4Image" alt="Image of @Model?.Value("serviceSolution4Headline")">
+                        </div>
+                        <p>@Model?.Value("serviceSolution4Text")</p>
+                    </div>
+                </a>
+                <a href="@Model?.Value("serviceSolution5Link")">
+                    <div class="solution-item">
+                        <h5>@Model?.Value("serviceSolution5Headline")</h5>
+                        <div class="image">
+                            <img src="@serviceSolution5Image" alt="Image of @Model?.Value("serviceSolution5Headline")">
+                        </div>
+                        <p>@Model?.Value("serviceSolution5Text")</p>
+                    </div>
+                </a>
+                <a href="@Model?.Value("serviceSolution6Link")">
+                    <div class="solution-item">
+                        <h5>@Model?.Value("serviceSolution6Headline")</h5>
+                        <div class="image">
+                            <img src="@serviceSolution6Image" alt="Image of @Model?.Value("serviceSolution6Headline")">
+                        </div>
+                        <p>@Model?.Value("serviceSolution6Text")</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
