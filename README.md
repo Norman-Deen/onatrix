@@ -8,7 +8,7 @@ It leverages the flexibility of Umbraco with the power of .NET to create a dynam
 ## 🚀 Features
 
 - 💡 CMS-powered content using Umbraco
-- ⚙️ Built with ASP.NET Core (.NET 8)
+- ⚙️ Built with ASP.NET Core (.NET 10)
 - 🔧 Structured folder setup with `Models`, `Views`, and `Controllers`
 - 🌐 Responsive front-end layout
 - 🧩 Extendable through uSync configurations
@@ -68,3 +68,9 @@ This project was created as part of a course assignment at EC Utbildning. It is 
 
 > Created by **Nour** — .NET Fullstack Developer & 3D Visual Designer
 
+
+## Maintenance update — 2026-10-19
+
+The project now targets **.NET 10** and **Umbraco CMS 17.7.1 (LTS)**. See [upgrade and validation notes](docs/upgrade-notes.md) for dependency changes, verification, and the remaining ImageSharp advisories.
+
+The retired Azure database was not contacted or migrated. A successful build validates source compatibility, not restoration of the old content database or a working deployed site.
